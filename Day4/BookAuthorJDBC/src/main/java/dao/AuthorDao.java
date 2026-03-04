@@ -11,7 +11,7 @@ public class AuthorDao implements IAuthorDao{
     private static Connection con;
     static{
         try{
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "Anant@123");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "pass");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -35,3 +35,4 @@ public class AuthorDao implements IAuthorDao{
         return "Author not created !";
     }
 }
+
