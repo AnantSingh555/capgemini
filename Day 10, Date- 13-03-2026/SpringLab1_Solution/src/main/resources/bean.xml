@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+<!--Beans for first problem-->
+    <bean id="e" class="com.cg.bean.Employee">
+        <property name="employeeId" value="12345"/>
+        <property name="employeeName" value="Harriet"/>
+        <property name="salary" value="40000.0"/>
+        <property name="businessUnit" value="PES-BU"/>
+        <property name="age" value="30"/>
+    </bean>
+<!--    beans for second and third problem-->
+    <context:annotation-config/>
+    <bean id="emp1" class="com.cg.bean.Employee">
+        <property name="age" value="30"/>
+        <property name="employeeId" value="12345"/>
+        <property name="employeeName" value="Harriet"/>
+        <property name="salary" value="40000.0"/>
+    </bean>
+    <bean id="emp2" class="com.cg.bean.Employee">
+        <property name="age" value="26"/>
+        <property name="employeeId" value="12346"/>
+        <property name="employeeName" value="Shepherd"/>
+        <property name="salary" value="50000.0"/>
+    </bean>
+
+    <bean id="sbu" class="com.cg.bean.SBU">
+        <constructor-arg name="sBuId" value="PES-BU"/>
+        <constructor-arg name="sbuName" value="Product Engineering Services"/>
+        <constructor-arg name="sbuHead" value="Kiran Rao"/>
+        <property name="empList">
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+            </list>
+        </property>
+    </bean>
+
+<!--    beans for fourth problem -->
+    <bean id="emp3" class="com.cg.bean.Employee">
+        <property name="employeeId" value="100"/>
+        <property name="employeeName" value="Rama"/>
+        <property name="salary" value="12345.67"/>
+    </bean><bean id="emp4" class="com.cg.bean.Employee">
+        <property name="employeeId" value="101"/>
+        <property name="employeeName" value="Rahul"/>
+        <property name="salary" value="2468.13"/>
+    </bean>
+<!--    Using setter injection-->
+<!--    <bean id="eS" class="com.cg.bean.EmployeeService">-->
+<!--        <property name="employeeList">-->
+<!--            <list>-->
+<!--                <ref bean="emp3"/>-->
+<!--                <ref bean="emp4"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    Using constructor injection-->
+<!--    <bean id="eS" class="com.cg.bean.EmployeeService">-->
+<!--        <constructor-arg index="0" type="java.util.List">-->
+<!--            <list>-->
+<!--                <ref bean="emp3"/>-->
+<!--                <ref bean="emp4"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    Using autowiring byName-->
+<!--    <bean id="employeeList" class="java.util.ArrayList">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="emp3"/>-->
+<!--                <ref bean="emp4"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+<!--    <bean id="eS" class="com.cg.bean.EmployeeService" autowire="byName"/>-->
+
+<!--    autowiring bytype-->
+    <bean id="eS" class="com.cg.bean.EmployeeService" autowire="byType"/>
+</beans>
