@@ -5,13 +5,19 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
     <bean id="book" class="com.cg.bean.Book">
-        <property name="bookId" value="101"/>
-        <property name="title" value="Spring Framework"/>
-        <property name="author" value="Rod Johnson"/>
+<!--        <property name="bookId" value="101"/>-->
+<!--        <property name="title" value="Spring Framework"/>-->
+<!--        <property name="author" value="Rod Johnson"/>-->
+        <constructor-arg name="bookId" value="101"/>
+        <constructor-arg name="title" value="Spring Framework"/>
+        <constructor-arg name="author" value="Rod Johnson"/>
     </bean>
     <bean id="lib" class="com.cg.bean.Librarian">
-        <property name="librarianId" value="1001"/>
-        <property name="name" value="Amit"/>
-        <property name="book" ref="book"/>
+<!--        <property name="librarianId" value="1001"/>-->
+<!--        <property name="name" value="Amit"/>-->
+<!--        <property name="book" ref="book"/>-->
+        <constructor-arg name="librarianId" value="1001"/>
+        <constructor-arg name="name" value="Amit"/>
+        <constructor-arg name="book" ref="book"/>
     </bean>
 </beans>
