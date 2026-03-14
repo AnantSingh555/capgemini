@@ -5,6 +5,13 @@ public class Book {
     private String title;
     private String author;
 
+    public Book(){};
+    public Book(int bookId, String title, String author) {
+        this.bookId = bookId;
+        this.title = title;
+        this.author = author;
+    }
+    
     public int getBookId() {
         return bookId;
     }
