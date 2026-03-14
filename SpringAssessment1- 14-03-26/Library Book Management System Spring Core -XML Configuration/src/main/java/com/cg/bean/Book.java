@@ -29,10 +29,8 @@ public class Book {
         this.author = author;
     }
     public void displayBookDetails(){
-        System.out.println("Book Details:");
-        System.out.println("------------------------------");
         System.out.println("Book Id: \t"+bookId);
-        System.out.println("Book Title: \t"+title);
-        System.out.println("Book Author: \t"+author);
+        System.out.println("Title: \t \t"+title);
+        System.out.println("Author: \t"+author);
     }
 }
