@@ -33,8 +33,6 @@ public class Librarian {
     public void issueBook(){
         System.out.println("Librarian: "+name);
         System.out.println("Issued Book Details: ");
-        System.out.println("Book Id: \t"+book.getBookId());
-        System.out.println("Title: \t \t"+book.getTitle());
-        System.out.println("Author: \t"+book.getAuthor());
+        book.displayBookDetails();
     }
 }
